@@ -15,8 +15,10 @@ User.create!(email: 'admin@admin.com', password:"password", password_confirmatio
 Product.delete_all
 Brand.delete_all
 
+
 10. times do |i|
   t = Brand.create(:name => "Brand#{i}")
+
   150. times do |j|
       Product.create(:name => "Product#{j}",brand_id: t.id)
       # Comme ca chaque product a bien son brand_id a chaque tour de boucle relié au brand

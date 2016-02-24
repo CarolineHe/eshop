@@ -11,24 +11,30 @@
   </thead>
 
   <tbody>
+      <div class="container-fluid">
    <% @brands.each do |brand| %>
    <tr>
      <td><%= brand.name %></td>
      <td><%= link_to 'Show', brand %></td>
      <!-- <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
      <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+     <div>
      <% brand.products.each do |product| %>
+     <div>
      <tr>
        <td><%= product.name %></td>
-       <td><%= product.brand_id %></td>
+       <!-- <td><%= product.brand_id %></td> -->
        <td></td>
        <td><%= link_to 'Show', product %></td>
 
      </tr>
-
+</div>
      <% end %>
+
    </tr>
    <% end %>
+   </div>
+   </div>
  </tbody>
 
 </table>
