@@ -11,6 +11,18 @@
 User.delete_all
 User.create!(email: 'admin@admin.com', password:"password", password_confirmation:"password")
 
+
+Product.delete_all
+Brand.delete_all
+
+10. times do |i|
+  t = Brand.create(:name => "Brand#{i}")
+  150. times do |j|
+      Product.create(:name => "Product#{j}",brand_id: t.id)
+      # Comme ca chaque product a bien son brand_id a chaque tour de boucle relié au brand
+    end
+end
+
 # # Use these variable to  populate text zones
 # text1 = "Donec commodo lacus arcu, vitae iaculis nisi pharetra accumsan. Phasellus nibh ligula, efficitur non metus sit amet, accumsan condimentum magna. Ut non cursus purus. Vestibulum eu lobortis enim. Vivamus mattis dictum tellus et tempus. Maecenas massa nunc, varius at risus eget, euismod varius ipsum. Nam accumsan, est sit amet interdum ultricies, tellus erat semper orci, in posuere urna dolor vitae erat. Aenean vel faucibus tortor. Morbi semper vulputate tortor, nec vulputate leo mollis quis. Vestibulum sit amet tincidunt risus. Vivamus purus nisl, porttitor eget tempor a, gravida eget eros. Fusce eget augue finibus, tincidunt nulla eu, rutrum sapien. Mauris sed semper orci."
 
@@ -23,15 +35,3 @@ User.create!(email: 'admin@admin.com', password:"password", password_confirmatio
 ## exemple:
 
 # Post.create(name: "title exemple",content: text4)
-User.create(:email => "test@test.fr", :password => '12345678', :password_confirmation => '12345678')
-
-i = 1
-10. times do |i|
-thebrands = Brand.create(:name => "Brand#{i+1}")
-
-j = 1
-150. times do |j|
-productsbrands = Product.create(:name => "Product#{j+1}")
-
-end
-end

@@ -11,29 +11,26 @@
   </thead>
 
   <tbody>
-    <% @brands.each do |brand| %>
-      <tr>
-        <td><%= brand.name %></td>
-        <td><%= link_to 'Show', brand %></td>
-        <!-- <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
-        <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+   <% @brands.each do |brand| %>
+   <tr>
+     <td><%= brand.name %></td>
+     <td><%= link_to 'Show', brand %></td>
+     <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
+     <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     <% brand.products.each do |product| %>
+     <tr>
+       <td><%= product.name %></td>
+       <td><%= product.brand_id %></td>
+       <td></td>
+       <td><%= link_to 'Show', product %></td>
 
-        <% Product.all.each do |product| %>
-    <% if brand.id == product.brand_id%>
-      <tr>          <td><%= product.name %></td>
-        <td><%= product.content %></td>
-        <td><%= product.brand_id %></td>
+     </tr>
 
-        <td><%= link_to image_tag(product.visuel.thumb), image_path(product.visuel)%></td>
-        <td><%= link_to 'Show', product %></td>
-        
-      </tr>
-    <% end %>
-    <% end %>
-      </tr>
-    <% end %>
+     <% end %>
+   </tr>
+   <% end %>
+ </tbody>
 
-  </tbody>
 </table>
 
 <br>
