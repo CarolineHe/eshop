@@ -21,5 +21,11 @@ User.create!(email: 'admin@admin.com', password:"password", password_confirmatio
 # text4 = "Ut non velit in eros efficitur placerat in et sem. Quisque vitae mollis turpis. Phasellus vestibulum sollicitudin bibendum. Nam aliquam diam ipsum, non commodo nisi semper ac. Aenean malesuada magna vitae tempor porttitor. Cras et ligula rutrum leo ultrices tempus. Maecenas interdum mauris leo, vitae interdum diam mattis a. Phasellus a egestas odio. Curabitur tincidunt non erat non porta. Donec imperdiet porta quam, sed luctus dolor fringilla sed. Maecenas nunc orci, dictum et turpis non, rhoncus lacinia risus. Sed posuere tincidunt mi, vel ultrices felis tincidunt non. Maecenas pretium auctor iaculis. Fusce ipsum erat, ornare id convallis lobortis, tempus nec velit. Sed tristique mi elit, ut sodales dui feugiat quis."
 
 ## exemple:
-                                                                        
-# Post.create(name: "title exemple",content: text4) 
+
+# Post.create(name: "title exemple",content: text4)
+
+i = 1
+10. times do |i|
+thebrands = Brand.create(:name => "Brand#{i+1}")
+
+end
