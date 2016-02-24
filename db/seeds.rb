@@ -23,6 +23,7 @@ User.create!(email: 'admin@admin.com', password:"password", password_confirmatio
 ## exemple:
 
 # Post.create(name: "title exemple",content: text4)
+User.create(:email => "test@test.fr", :password => '12345678', :password_confirmation => '12345678')
 
 i = 1
 10. times do |i|
