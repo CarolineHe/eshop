@@ -28,4 +28,9 @@ i = 1
 10. times do |i|
 thebrands = Brand.create(:name => "Brand#{i+1}")
 
+j = 1
+150. times do |j|
+productsbrands = Product.create(:name => "Product#{j+1}")
+
+end
 end
